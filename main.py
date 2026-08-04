@@ -3166,19 +3166,6 @@ async def editar_autor_livro(callback: CallbackQuery):
     await callback.message.answer(
         "✍️ Envie agora o novo nome do autor/autora."
     )
-
-@dp.message(F.chat.id == GRUPO_TRADUCAO)
-async def descobrir_topico(message: Message):
-
-    print("========== TÓPICO ==========")
-    print("Grupo:", message.chat.id)
-    print("Tópico ID:", message.message_thread_id)
-    print("Texto:", message.text)
-    print("============================")
-
-    await message.reply(
-        f"ID do tópico: {message.message_thread_id}"
-    )
     
 @dp.callback_query(F.data.startswith("atualizar_livro_"))
 async def atualizar_livro(callback: CallbackQuery):
